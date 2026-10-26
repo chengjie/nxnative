@@ -37,6 +37,7 @@ One line per symptom in the [subsystem references](../reference/): what you see 
 - `CRASH sig=10 addr=0` on an `stp` relative to `sp`, with `sp` not a multiple of 16 (`main+0x2bbba4`, `sub sp, sp, #0xc0` then `stp d15, d14, [sp, #0x60]` with sp ending in `…9dc`). → [Stack arguments reserved with sub sp, sp, xN](../reference/rewriter.md#stack-arguments-reserved-with-sub-sp-sp-xn)
 - SIGILL / trap on a system register read. → [System register reads that macOS traps](../reference/rewriter.md#system-register-reads-that-macos-traps)
 - every pointer in `.data` / the GOT is a module offset, crashes everywhere. → [Packed relative relocations (DT_RELR)](../reference/rewriter.md#packed-relative-relocations-dt_relr)
+- `jump table 53e9c` while rewriting Warm Snow 2.1.4's Unity IL2CPP `main`. → [Loaded method-pointer tail call before an error block](../reference/rewriter.md#loaded-method-pointer-tail-call-before-an-error-block)
 
 ## Memory and address space
 
